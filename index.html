@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
+    <link rel="icon" href="OIP-C.jpg" type="image/jpeg">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To-Do List 应用</title>
@@ -21,6 +22,26 @@
                     <i class="fas fa-plus"></i> 添加
                 </button>
             </div>
+            
+            <div class="additional-inputs">
+                <div class="input-row">
+                    <div class="input-field">
+                        <label for="deadlineInput"><i class="fas fa-calendar-alt"></i> 截止时间（选填）</label>
+                        <input type="datetime-local" id="deadlineInput" class="optional-input">
+                    </div>
+                    <div class="input-field">
+                        <label for="locationInput"><i class="fas fa-map-marker-alt"></i> 交付地点（选填）</label>
+                        <input type="text" id="locationInput" placeholder="输入交付地点..." maxlength="50" class="optional-input">
+                    </div>
+                </div>
+                <div class="input-row">
+                    <div class="input-field">
+                        <label><i class="fas fa-clock"></i> 已用时间（自动计算）</label>
+                        <input type="text" value="任务完成后自动计算" readonly class="optional-input" style="background-color: #f5f5f5; color: #666;">
+                    </div>
+                </div>
+            </div>
+            
             <div class="filter-section">
                 <button class="filter-btn active" data-filter="all">全部</button>
                 <button class="filter-btn" data-filter="active">待完成</button>
