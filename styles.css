@@ -457,3 +457,250 @@ body {
         padding: 3px 8px;
     }
 }
+
+/* 新增功能样式 */
+
+/* 星标样式 */
+.star-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: #ccc;
+    transition: all 0.3s ease;
+    padding: 5px;
+    border-radius: 50%;
+}
+
+.star-btn:hover {
+    color: #ffd700;
+    background: rgba(255, 215, 0, 0.1);
+}
+
+.star-btn.starred {
+    color: #ffd700;
+}
+
+.star-btn.starred:hover {
+    color: #ffed4e;
+}
+
+/* 任务头部样式 */
+.todo-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.todo-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+}
+
+/* 状态标签样式 */
+.status-badge {
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.status-not-started {
+    background: #ffd700;
+    color: #8b6914;
+}
+
+.status-in-progress {
+    background: #4facfe;
+    color: white;
+}
+
+.status-completed {
+    background: #28a745;
+    color: white;
+}
+
+/* 星标复选框样式 */
+.star-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.star-checkbox:hover {
+    background: #f8f9fa;
+}
+
+.star-checkbox input[type="checkbox"] {
+    display: none;
+}
+
+.star-checkbox .star-icon {
+    font-size: 1.5rem;
+    color: #ccc;
+    transition: all 0.3s ease;
+}
+
+.star-checkbox input[type="checkbox"]:checked + .star-icon {
+    color: #ffd700;
+}
+
+.star-checkbox .star-text {
+    font-weight: 600;
+    color: #495057;
+}
+
+/* 提醒消息样式 */
+.reminder-message, .deadline-reminder {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1001;
+    max-width: 400px;
+    animation: slideInDown 0.5s ease;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.reminder-message {
+    background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+    color: #8b6914;
+    border-left: 4px solid #ffa500;
+}
+
+.deadline-reminder {
+    background: linear-gradient(135deg, #ff6b6b 0%, #ff8e8e 100%);
+    color: white;
+    border-left: 4px solid #ff4757;
+}
+
+.reminder-content {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 20px;
+}
+
+.reminder-content i {
+    font-size: 1.5rem;
+}
+
+.reminder-text {
+    flex: 1;
+}
+
+.reminder-text strong {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 1rem;
+}
+
+.reminder-text p {
+    margin: 2px 0;
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+.reminder-text .warning {
+    color: #ffeb3b;
+    font-weight: 600;
+}
+
+.reminder-close {
+    background: none;
+    border: none;
+    color: inherit;
+    font-size: 1.5rem;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.reminder-close:hover {
+    opacity: 1;
+}
+
+/* 提醒动画 */
+@keyframes slideInDown {
+    from {
+        transform: translate(-50%, -100%);
+        opacity: 0;
+    }
+    to {
+        transform: translate(-50%, 0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOutUp {
+    from {
+        transform: translate(-50%, 0);
+        opacity: 1;
+    }
+    to {
+        transform: translate(-50%, -100%);
+        opacity: 0;
+    }
+}
+
+/* 编辑界面样式 */
+.edit-form .input-field {
+    margin-bottom: 15px;
+}
+
+.edit-form .input-row {
+    margin-bottom: 10px;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .todo-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .todo-title {
+        width: 100%;
+        justify-content: space-between;
+    }
+    
+    .reminder-message, .deadline-reminder {
+        max-width: 90%;
+        left: 5%;
+        transform: none;
+    }
+    
+    .reminder-content {
+        padding: 12px 15px;
+        gap: 10px;
+    }
+    
+    .reminder-content i {
+        font-size: 1.2rem;
+    }
+    
+    .reminder-text strong {
+        font-size: 0.9rem;
+    }
+    
+    .reminder-text p {
+        font-size: 0.8rem;
+    }
+}
